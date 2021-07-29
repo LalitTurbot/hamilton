@@ -1036,7 +1036,7 @@ type User struct {
 	JobTitle                        *StringNullWhenEmpty     `json:"jobTitle,omitempty"`
 	Mail                            *StringNullWhenEmpty     `json:"mail,omitempty"`
 	MailNickname                    *string                  `json:"mailNickname,omitempty"`
-	MemberOf                        *[]Group                 `json:"memberOf,omitempty"`
+	MemberOf                        *[]DirectoryObject       `json:"memberOf,omitempty"`
 	MobilePhone                     *StringNullWhenEmpty     `json:"mobilePhone,omitempty"`
 	MySite                          *string                  `json:"mySite,omitempty"`
 	OfficeLocation                  *StringNullWhenEmpty     `json:"officeLocation,omitempty"`
@@ -1133,4 +1133,12 @@ type VerifiedPublisher struct {
 	AddedDateTime       *time.Time `json:"addedDateTime,omitempty"`
 	DisplayName         *string    `json:"displayName,omitempty"`
 	VerifiedPublisherId *string    `json:"verifiedPublisherId,omitempty"`
+}
+
+type DirectoryObject struct {
+	ID          *string `json:"id,omitempty"`
+	OdataID     *string `json:"@odata.id,omitempty"`
+	OdataType   *string `json:"@odata.type,omitempty"`
+	DisplayName *string `json:"displayName,omitempty"`
+	Description *string `json:"description,omitempty"`
 }
